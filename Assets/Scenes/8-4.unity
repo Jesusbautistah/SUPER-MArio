@@ -3367,7 +3367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98440ffe2d6343742a6cfefe896a3d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelMusic
-  music: {fileID: 0}
+  music: {fileID: 8300000, guid: 8249346a8a6360448977b9105bcc78ac, type: 3}
   theme: 2
   volume: 0.6
 --- !u!82 &328836186
@@ -3381,11 +3381,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 8249346a8a6360448977b9105bcc78ac, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

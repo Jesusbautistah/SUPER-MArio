@@ -21,6 +21,7 @@ public static class CastleLevelBuilder
     private const string SpritesFolder = "Assets/Sprites/Castle";
     private const string PrefabFolder = "Assets/Prefabs/Castle";
     private const string Prefabs = "Assets/Prefabs/";
+    private const string CastleMusicPath = "Assets/Audio_level4/BAD BUNNY - DtMF (Visualizer)  DeBÍ TiRAR MáS FOToS.mp3";
 
     private const float LowerStand = 2f;     // Mario / enemies on the lower floor
     private const float UpperStand = 30f;    // Mario / enemies on the upper floor
@@ -287,9 +288,17 @@ public static class CastleLevelBuilder
         gameManager.AddComponent<GameManager>();
 
         GameObject musicObject = new GameObject("Music", typeof(AudioSource));
-        musicObject.GetComponent<AudioSource>().playOnAwake = false;
+        AudioSource audioSource = musicObject.GetComponent<AudioSource>();
+        audioSource.playOnAwake = false;
         music = musicObject.AddComponent<LevelMusic>();
         music.theme = LevelMusic.Theme.Castle;
+
+        AudioClip customClip = AssetDatabase.LoadAssetAtPath<AudioClip>(CastleMusicPath);
+        if (customClip != null)
+        {
+            music.music = customClip;
+            audioSource.clip = customClip;
+        }
 
         Place("Mario", null, 3f, LowerStand);
 
